@@ -12,7 +12,7 @@ import wind_icon from '../Assets/wind.png'
 
 const WeatherApp = () => {
 
-    let api_key = "b0ab208ca68ff103f44a73301f9fd9de";
+    
     const [wicon,setWicon] = useState(clear_icon)
 
     const search = async ()=>{
@@ -21,7 +21,7 @@ const WeatherApp = () => {
             return 0;
         }
 
-        let url=`https://api.openweathermap.org/data/2.5/weather?q=${element[0].value}&units=Metric&appid=${api_key}`
+        let url=`https://api.openweathermap.org/data/2.5/weather?q=${element[0].value}&units=Metric&appid=${process.env.REACT_APP_API_KEY}`
         
 
         let response = await fetch(url);
